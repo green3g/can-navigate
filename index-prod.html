@@ -20,24 +20,25 @@
         //let steal know we've already loaded the main css
         steal = {
             instantiated: {
-                "bundles/can-admin/app/crud.css!$css": null
+                "bundles/can-navigate/app/app.css!$css": null
             }
         };
     </script>
-    <script src="dist/steal.production.js" data-main="can-admin/app/crud">
+    <script src="dist/steal.production.js" data-main="can-navigate/app/app">
 
         Promise.all([
-            steal.import('can-admin/app/crud')
+            steal.import('can-admin/app/app')
         ]).then(function(modules) {
             // var qs = modules[0];
             var AppViewModel = modules[0].AppViewModel;
-            var config = 'can-admin/config/workorders/workorders';
+            var config = 'can-navigate/config/pages/workorders/workorders';
 
             steal.import(config).then(function(module) {
                 var app = new AppViewModel(module.config || module.default);
                 app.startup(document.getElementById('app'));
             });
         });
+        
     </script>
 
 </body>

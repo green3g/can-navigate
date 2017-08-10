@@ -8,7 +8,7 @@ stealTools.export({
     outputs: {
         '+amd': {
             ignore: false,
-            modules: ['can-admin/config/workorders']
+            modules: ['can-navigate/config/pages/workorders']
         },
         '+cjs': {
             ignore: false

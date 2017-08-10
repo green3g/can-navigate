@@ -6,6 +6,7 @@ import 'can-stache/helpers/route';
 import {TOPICS as T} from './constants';
 import loader from '@loader';
 import 'can-stache-bindings';
+import assign from 'can-util/js/assign/assign';
 
 import PageMap from './types/PageMap';
 import PageList from './types/PageList';
@@ -58,7 +59,7 @@ export const AppViewModel = DefineMap.extend('AppViewModel', {
                 const props = this.pages.byId(page);
                 if (props.path) {
                     loader.import(props.path).then((module) => {
-                        this.pageData.set(module.default);
+                        this.pageData = module.default;
                         resolve(module.default);
                     });
                 } else {
@@ -72,7 +73,7 @@ export const AppViewModel = DefineMap.extend('AppViewModel', {
         type: 'string',
         value: 'list',
         get (page) {
-            return this.pages.isValid(page) ? page : this.pages[0].id;
+            return this.pages.isValid(page) ? page : this.defaultPage || this.pages[0].id;
         },
         set (page) {
             return page;
@@ -86,6 +87,7 @@ export const AppViewModel = DefineMap.extend('AppViewModel', {
         Type: PageMap,
         serialize: false
     },
+    defaultPage: {type: 'string', serialize: false},
     /**
      * initializes the application and renders it on a dom node
      * @param  {DomElement} domNode The dom node to render this application

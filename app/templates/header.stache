@@ -7,9 +7,11 @@
         <dropdown-menu text="Demos" icon-class="fa fa-fw fa-caret-down">
             
             <ul class="menu">
+                {{#each pages}}
                 <li class="menu-item">
-                    <a href="{{routeUrl(page='news' view='articles' section='list')}}"><i class="fa fa-fw fa-newspaper-o"></i> Article Manager</a>
+                    <a href="#!{{id}}"><i class="{{iconClass}}"></i> {{title}}</a>
                 </li>
+                {{/each}}
             </ul>
         </dropdown-menu>
     </section>
