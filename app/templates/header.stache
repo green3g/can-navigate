@@ -1,6 +1,6 @@
 <header class="navbar main">
     <section class="navbar-primary">
-        <a href="{{routeUrl(page='home'}}" class="navbar-brand mr-10">Can-Admin</a>
+        <a href="{{routeUrl(page='home'}}" class="navbar-brand mr-10">Can-Navigate</a>
     </section>
 
     <section class="navbar-section">        

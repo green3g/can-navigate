@@ -1,0 +1,22 @@
+<toast-container {(toasts)}="messages" />
+
+<!-- Page Content -->
+<div class="container">
+    {{#with pageData.getAdminView(view)}}
+        <dropdown-menu text="{{title}}" icon-class="fa fa-fw fa-caret-down">
+            
+            <ul class="menu">
+                {{#each pageData.views}}
+                    <li class="menu-item">
+                        <a href="{{routeUrl(section='list' view=id, true)}}">
+                            <i class="{{#if iconClass}}{{iconClass}}{{else}}fa fa-fw fa-ellipsis-v{{/if}}"></i> {{title}}</a>
+                    </li>
+                {{/each}}
+            </ul>
+
+        </dropdown-menu>
+        {{#if .}}
+            <data-admin {(page)}="section" {(view-id)}="objectId" {view}="." />
+        {{/if}}
+    {{/with}}
+</div>

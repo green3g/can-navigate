@@ -2,9 +2,12 @@ export default {
     routes: [
         '{page}',
         '{page}/{view}/{section}',
-        '{page}/{view}/{section}/{id}'
+        '{page}/{view}/{section}/{objectId}'
     ],
     page: 'home',
+    view: 'all_wo',
+    section: 'list',
+    objectId: '',
     pages: [{
         path: 'can-navigate/config/pages/home/home',
         title: 'Home',

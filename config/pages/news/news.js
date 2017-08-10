@@ -1,17 +1,11 @@
-import renderAdmin from './templates/admin.stache';
-import './styles/admin.less';
+import admin from '../_admin';
+import assign from 'can-util/js/assign/assign';
 
 import Article from './Article';
 import PersonBasic from './Person_Basic';
 import PersonAdvanced from './Person_Advanced';
 
 
-export default {
-    views: [Article, PersonBasic, PersonAdvanced],
-    getActiveView (id) {
-        return this.views.filter((view) => {
-            return view.id === id;
-        })[0];
-    },
-    render: renderAdmin
-};
+export default assign({
+    views: [Article, PersonBasic, PersonAdvanced]
+}, admin);
