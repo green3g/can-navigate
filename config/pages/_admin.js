@@ -10,6 +10,6 @@ export default {
     getAdminView (id) {
         return this.views.filter((view) => {
             return view.id === id;
-        })[0];
+        })[0] || this.views[0];
     }
 };

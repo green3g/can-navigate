@@ -48,7 +48,7 @@ export const Person = factory({
     map: DefineMap.extend({
         name: {
             type: 'string',
-            displayTemplate: `<a href="{{routeUrl(view='people_advanced' page='details' objectId=object.id, true)}}">
+            displayTemplate: `<a href="{{routeUrl(view='people_advanced' section='details' objectId=object.id, true)}}">
                 <i class="fa fa-user fa-fw"></i> {{object.name}}</a>`
         },
         // eslint-disable-next-line camelcase

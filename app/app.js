@@ -3,10 +3,8 @@ import DefineList from 'can-define/list/list';
 import route from 'can-route';
 import dev from 'can-util/js/dev/dev';
 import 'can-stache/helpers/route';
-import {TOPICS as T} from './constants';
 import loader from '@loader';
 import 'can-stache-bindings';
-import assign from 'can-util/js/assign/assign';
 
 import PageMap from './types/PageMap';
 import PageList from './types/PageList';
@@ -14,6 +12,7 @@ import renderBody from './templates/body.stache';
 import header from './templates/header.stache';
 import footer from './templates/footer.stache';
 import error from './templates/error.stache';
+import config from '../config/config';
 import './styles.less';
 
 window.route = route;
@@ -114,3 +113,10 @@ export const AppViewModel = DefineMap.extend('AppViewModel', {
         domNode.appendChild(renderBody(this));
     }
 });
+
+
+// start up a new app
+var app = new AppViewModel(config);
+app.startup(document.getElementById('app'));
+
+export default app;

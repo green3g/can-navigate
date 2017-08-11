@@ -4,8 +4,9 @@ export default {
         '{page}/{view}/{section}',
         '{page}/{view}/{section}/{objectId}'
     ],
+    defaultPage: 'home',
     page: 'home',
-    view: 'all_wo',
+    view: 'articles',
     section: 'list',
     objectId: '',
     pages: [{
