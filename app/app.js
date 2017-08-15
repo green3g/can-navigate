@@ -10,6 +10,7 @@ import renderBody from './templates/body.stache';
 import header from './templates/header.stache';
 import footer from './templates/footer.stache';
 import error from './templates/error.stache';
+import config from '../config/config';
 import './styles.less';
 
 window.route = route;
@@ -110,3 +111,10 @@ export const AppViewModel = DefineMap.extend('AppViewModel', {
         domNode.appendChild(renderBody(this));
     }
 });
+
+
+// start up a new app
+var app = new AppViewModel(config);
+app.startup(document.getElementById('app'));
+
+export default app;

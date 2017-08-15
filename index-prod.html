@@ -24,22 +24,7 @@
             }
         };
     </script>
-    <script src="dist/steal.production.js" data-main="can-navigate/app/app">
-
-        Promise.all([
-            steal.import('can-navigate/app/app')
-        ]).then(function(modules) {
-            // var qs = modules[0];
-            var AppViewModel = modules[0].AppViewModel;
-            var config = 'can-navigate/config/pages/workorders/workorders';
-
-            steal.import(config).then(function(module) {
-                var app = new AppViewModel(module.config || module.default);
-                app.startup(document.getElementById('app'));
-            });
-        });
-        
-    </script>
+    <script src="dist/steal.production.js" data-main="can-navigate/app/app"></script>
 
 </body>
 

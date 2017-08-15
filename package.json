@@ -1,6 +1,6 @@
 {
   "name": "can-navigate",
-  "version": "0.1.1",
+  "version": "0.0.1",
   "description": "",
   "main": "app/app.js",
   "scripts": {
@@ -31,6 +31,7 @@
     "jquery": "^3.2.1",
     "jquery-timepicker": "^1.3.3",
     "jquery-ui": "^1.12.1",
+    "leaflet": "^1.2.0",
     "object-assign": "^4.1.1",
     "pubsub-js": "^1.5.7",
     "spectre.css": "^0.2.14",
@@ -53,11 +54,8 @@
       "steal-stache"
     ],
     "bundle": [
-      "can-admin/config/news/news",
-      "can-admin/config/news/Person_Advanced",
-      "can-admin/config/news/Person_Basic",
-      "can-admin/config/news/Visit",
-      "can-admin/config/news/Article"
+      "can-navigate/config/pages/home/home",
+      "can-navigate/config/pages/news/news"
     ]
   }
 }

@@ -47,7 +47,7 @@ export const Article = factory({
             })
         },
         title: {
-            displayTemplate: `<a href="{{routeUrl(section='details' objectId=object.id, true)}}">
+            displayTemplate: `<a href="{{routeUrl(view='articles' section='details' objectId=object.id, true)}}">
                 <i class="fa fa-list"></i> {{object.title}}</a>`,
             type: 'string'
         },
@@ -64,7 +64,7 @@ export const Article = factory({
             displayTemplate: `{{#if object.author.isPending}}
                 <i class="fa fa-spin fa-spinner"></i>
                 {{else}}
-                <a href="{{routeUrl(view='people_advanced' page='details' objectId=object.author_id, true)}}">
+                <a href="{{routeUrl(view='people_advanced' section='details' objectId=object.author_id, true)}}">
                     {{object.author.value.name}}
                 </a>
                 {{/if}}`,

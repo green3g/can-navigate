@@ -21,24 +21,18 @@ import Article from './Article';
 
   */
 
-// a simple phone number regex
-//https://github.com/regexhq/phone-regex/blob/master/index.js
-const regexBase = '(?:\\+?(\\d{1,3}))?[-. (]*(\\d{3})[-. )]*(\\d{3})[-. ]*(\\d{4})(?: *x(\\d+))?';
-const phoneRegEx = new RegExp('^' + regexBase + '$');
 
 // get a list of states for the dropdown
+import states from './data/states.json';
 const statesList = new DefineList();
-import $ from 'jquery';
-$.getJSON('https://gist.githubusercontent.com/mshafrir/2646763/raw/8b0dbb93521f5d6889502305335104218454c2bf/states_hash.json').then((data) => {
-    for (var key in data) {
-        if (data.hasOwnProperty((key))) {
-            statesList.push({
-                label: data[key],
-                value: key
-            });
-        }
+for (var key in states) {
+    if (states.hasOwnProperty((key))) {
+        statesList.push({
+            label: states[key],
+            value: key
+        });
     }
-});
+}
 
 const MAPS_API = 'AIzaSyDGszAqvh2rnzJ0TGgYFwPUHRDwvL2WV5k';
 
@@ -48,7 +42,7 @@ export const Person = factory({
     map: DefineMap.extend({
         name: {
             type: 'string',
-            displayTemplate: `<a href="{{routeUrl(view='people_advanced' page='details' objectId=object.id, true)}}">
+            displayTemplate: `<a href="{{routeUrl(view='people_advanced' section='details' objectId=object.id, true)}}">
                 <i class="fa fa-user fa-fw"></i> {{object.name}}</a>`
         },
         // eslint-disable-next-line camelcase

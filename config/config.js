@@ -4,10 +4,7 @@ export default {
         '{page}/{view}/{section}',
         '{page}/{view}/{section}/{objectId}'
     ],
-    page: 'home',
-    view: 'all_wo',
-    section: 'list',
-    objectId: '',
+    defaultPage: 'home',
     pages: [{
         path: 'can-navigate/config/pages/home/home',
         title: 'Home',
@@ -18,5 +15,10 @@ export default {
         title: 'News Manager',
         iconClass: 'fa fa-news',
         id: 'news'
+    }, {
+        path: 'can-navigate/config/pages/map/map',
+        title: 'Map',
+        iconClass: 'fa fa-map-marker',
+        id: 'map'
     }]
 };
