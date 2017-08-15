@@ -60,6 +60,9 @@ export const AppViewModel = DefineMap.extend('AppViewModel', {
                 if (props.path) {
                     loader.import(props.path).then((module) => {
                         this.pageData = module.default;
+                        if (this.pageData.debug) {
+                            window.app = this;
+                        }
                         resolve(module.default);
                     });
                 } else {
@@ -75,16 +78,13 @@ export const AppViewModel = DefineMap.extend('AppViewModel', {
         get (page) {
             return this.pages.isValid(page) ? page : this.defaultPage || this.pages[0].id;
         },
-        set (page) {
-            return page;
-        },
         serialize (page) {
             return page;
         }
     },
     pageData: {
         value: {},
-        Type: PageMap,
+        Type: DefineMap,
         serialize: false
     },
     defaultPage: {type: 'string', serialize: false},
