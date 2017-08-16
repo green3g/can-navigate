@@ -1,11 +1,16 @@
-<header class="navbar main">
+<header class="navbar main navbar-responsive">
+    <a class="btn btn-link float-right nav-toggle" tabindex="0"><i class="fa fa-bars"></i></a>
+
     <section class="navbar-primary">
         <a href="{{routeUrl(page='home'}}" class="navbar-brand mr-10">Can-Navigate</a>
     </section>
 
     <section class="navbar-section">        
-        <dropdown-menu text="Demos" icon-class="fa fa-fw fa-caret-down">
-            
+        <div class="dropdown">
+            <a class="btn btn-link dropdown-toggle" tabindex="0">
+                My Apps <i class="fa fa-fw fa-caret-down"></i>
+            </a>
+
             <ul class="menu">
                 {{#each pages}}
                 <li class="menu-item">
@@ -13,24 +18,60 @@
                 </li>
                 {{/each}}
             </ul>
-        </dropdown-menu>
+        </div>
     </section>
 
-    <section class="navbar-section">
-        <dropdown-menu text="Github Repos" icon-class="fa fa-fw fa-caret-down" right>
+    <section class="navbar-section">      
+        <div class="dropdown">
+            <a class="btn btn-link dropdown-toggle" tabindex="0">
+                My Apps <i class="fa fa-caret-down"></i>
+            </a>
             <ul class="menu">
                 <li class="menu-item">
                     <a href="https://github.com/roemhildtg/flask-can-crud"><i class="fa fa-fw fa-github"></i> Flask Python App</a>
                 </li>
                 <li class="menu-item">
-                    <a href="https://github.com/roemhildtg/can-admin-app"><i class="fa fa-fw fa-github"></i> Can-Admin-App</a>
+                    <a href="https://github.com/roemhildtg/can-navigate"><i class="fa fa-fw fa-github"></i> Can Navigate</a>
                 </li>
-                <!-- <li class="menu-item">
-                    <a href="https://roemhildtg.github.io/spectre-canjs/docs/index.html"><i class="fa fa-fw fa-github"></i> Spectre-CanJS</a>
-                </li> -->
             </ul>
-        </dropdown-menu>
+        </div>
     </section>
+    
+    <style type="text/css">
+        .navbar-responsive {
+        }
 
+        .navbar-responsive .nav-toggle {
+            display:none;
+            padding-top: 0;
+        }
 
+        @media screen and (max-width: 600px) {
+          .navbar-responsive {
+                display:block;
+            }
+            .navbar-responsive .navbar-section {
+                display:none;
+            }
+
+            .navbar-responsive .nav-toggle {
+                display:block;
+                float:right;
+                font-size:0.9rem;
+            }
+          
+          .navbar-responsive:hover {
+            
+          }
+
+            
+            .nav-toggle:focus ~ .navbar-section, 
+            .navbar-responsive:hover .navbar-section {
+                display: block;
+                padding: 10px 0;
+                animation: slide-down .15s ease 1;
+              
+            }
+        }
+    </style>
 </header>
