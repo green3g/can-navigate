@@ -24,3 +24,37 @@ ul.checklist li:before {
     margin: 25px 0 0 10px;
     color: #a7c9d6;
 }
+
+/* responsive header */
+
+
+.navbar-responsive {
+}
+
+.navbar-responsive .nav-toggle {
+    display:none;
+    padding-top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-responsive {
+        display:block;
+    }
+    .navbar-responsive .navbar-section {
+        display:none;
+    }
+
+    .navbar-responsive .nav-toggle {
+        display:block;
+        float:right;
+        font-size:0.9rem;
+    }
+    
+    .nav-toggle:focus ~ .navbar-section, 
+    .navbar-responsive:hover .navbar-section {
+        display: block;
+        padding: 10px 0;
+        animation: slide-down .15s ease 1;
+      
+    }
+}
