@@ -11,12 +11,11 @@ import header from './templates/header.stache';
 import footer from './templates/footer.stache';
 import error from './templates/error.stache';
 import config from '../config/config';
+import '../config/base';
 import './styles.less';
 
 window.route = route;
 
-
-import '../config/base';
 
 export const AppViewModel = DefineMap.extend('AppViewModel', {
     seal: false
